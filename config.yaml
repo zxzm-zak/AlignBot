@@ -1,0 +1,13 @@
+prompt_text: "Your base prompt text with {variable_vars_imports}"
+temperature: 0
+model: gpt-4o
+max_tokens: 550
+query_prefix: "Act:"
+query_suffix: ""
+maintain_session: true
+include_context: true
+debug_mode: false
+has_return: false
+return_val_name: "result"
+frequency_penalty: 0
+logprobs: 1
