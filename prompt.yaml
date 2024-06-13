@@ -1,29 +1,13 @@
 current_state_prompt: |
-  kitchencounterdrawer, door is OPEN, character, wallpictureframe, clothespile is CLOSED, coffeemaker is OFF, pie, wall, bedroom, microwave is OFF and CLOSED, lightswitch is ON, kitchencabinet is CLOSED, washingsponge, bellpepper, salmon, fridge is CLOSED, wallshelf, tvstand, paper, floor, chips, photoframe, kitchen, whippedcream, candybar, faucet is OFF, tv is OFF, cereal, stovefan, waterglass, cutleryknife, kitchentable, condimentbottle, wineglass, bookshelf, cutleryfork, chocolatesyrup, walllamp, bench, sink, crackers, orchid, condimentshaker, kitchencounter is CLOSED, livingroom, powersocket, coffeepot is CLOSED, creamybuns, ceilinglamp, rug, book is CLOSED, plate, toaster is OFF, clock is OFF, wallphone is OFF, ceiling, fryingpan, box is CLOSED, dishbowl, bananas, breadslice, bathroom, garbagecan is CLOSED, stove is OFF and CLOSED, dishwashingliquid, plate ON kitchencounter, cutleryfork ON kitchentable, bookshelf ON floor, cutleryknife ON kitchentable, bellpepper ON kitchencounter, microwave ON kitchencounterdrawer, chocolatesyrup ON wallshelf, whippedcream ON rug, salmon ON microwave, orchid ON tvstand, wallpictureframe ON wall, bench ON floor, tvstand ON floor, book INSIDE bookshelf, bananas ON dishbowl, toaster ON kitchencounterdrawer, whippedcream ON kitchentable, dishbowl INSIDE bookshelf, fryingpan ON stove, rug ON kitchentable, coffeepot INSIDE coffeemaker, waterglass ON rug, dishwashingliquid ON kitchencounter, wallshelf ON wall, washingsponge ON kitchencounter, clothespile INSIDE bookshelf, bananas INSIDE bookshelf, box ON bookshelf, plate ON kitchentable, waterglass ON kitchentable, creamybuns ON wallshelf, breadslice INSIDE toaster, coffeemaker ON kitchencounterdrawer, chips ON wallshelf, book ON kitchentable, dishbowl ON bookshelf, pie ON kitchentable, wineglass ON tvstand, box ON tvstand, coffeepot ON kitchencounter, bellpepper ON kitchencounterdrawer, condimentshaker INSIDE bookshelf, coffeemaker ON kitchencounter, toaster ON kitchencounter, box INSIDE bookshelf, crackers ON wallshelf, character HOLD_RH book, faucet ON kitchencounter, book ON rug, cereal ON wallshelf, plate INSIDE microwave, candybar ON wallshelf, condimentbottle INSIDE bookshelf, tv ON tvstand, microwave ON kitchencounter, paper INSIDE bookshelf, kitchencounterdrawer ON kitchencounter, fridge ON floor, photoframe ON tvstand, wallpictureframe ON wallpictureframe, bench ON rug, pie ON rug, kitchencounterdrawer ON kitchencounterdrawer, dishbowl ON kitchencounter.
-  
-  assert('close' to 'mug' )
-  False
-  assert('close' to 'microwave' )
-  True
-  assert('book' is 'closed' )
-  True
-  assert('lightswitch' is 'OFF')
-  False
-  assert('book' in 'bookshelf')
-  True
-  assert('book' in 'hands')
-  True
-  assert('cereal' on 'bookshelf')
-  False
+  You are controlling a robotic arm. Your task is to analyze the status of the items in the current picture one by one:
 
-objs:
-  - microwave
-  - book
-  - lightswitch
-  - bookshelf
-  - cereal
-  - apple
-  - plate
+  Now there are these items in the picture:
+  {obj_list}
+
+  Analyze the status of the items as in the following example:
+  door is OPEN, clothespile is CLOSED, coffeemaker is OFF, microwave is OFF and CLOSED, lightswitch is ON, kitchencabinet is CLOSED, fridge is CLOSED, faucet is OFF, tv is OFF, kitchencounter is CLOSED, coffeepot is CLOSED, green square is ON the red square, plate is ON the table, apple is ON the plate, fork is IN the cap, avocado is NEXT TO the cap, plate is IN the microwave
+
+  As the example's format, you should output the status of all objects. The description should be as detailed as possible, including the condition of the items and the spatial relationships between them.
 
 
 act:
@@ -85,17 +69,17 @@ prompt_template: |
   Based on the current state and the available actions, please provide a step-by-step action plan to achieve the goal. 
 
   Please ensure that your action plan only includes actions from the list provided above, and each step should be clearly stated in the format below:
-  - Step 1: [action] [object1] (optional: [object2])
-  - Step 2: [action] [object1] (optional: [object2])
-  - ...
+  [action] ("object1", (optional: "object2"))
+  [action] ("object1", (optional: "object2"))
+  ...
 
-  Example plan:
-  Goal: Put the fork into the cup
-  - Step 1: find fork
-  - Step 2: walktowards fork
-  - Step 3: grab fork
-  - Step 4: find cup
-  - Step 5: putin fork cup
-  - Step 6: done
+  Example plan: Put the fork into the cup
+  def Put_the_fork_into_the_cup():
+    find ("fork")
+    walktowards ("fork")
+    grab ("fork")
+    find ("cup")
+    putin ("fork","cup")
+    done
 
-  As the example's format, you should output the Goal and each Step.
+  As the example's format, you should output like a python function, and each step of action is the function content.

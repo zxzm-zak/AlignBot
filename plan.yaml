@@ -1,14 +1,3 @@
-'Goal: Put the apple on the plate
-
-
-  - Step 1: find apple
-
-  - Step 2: walktowards apple
-
-  - Step 3: grab apple
-
-  - Step 4: find plate
-
-  - Step 5: putin apple plate
-
-  - Step 6: done'
+"```python\ndef Place_the_cup_on_the_plate():\n  find(\"cup\")\n  walktowards(\"cup\"\
+  )\n  grab(\"cup\")\n  find(\"plate\")\n  walktowards(\"plate\")\n  putin(\"cup\"\
+  , \"plate\")\n  done\n```"

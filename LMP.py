@@ -20,22 +20,6 @@ class LMP:
             api_version="2024-02-01"
         )
 
-    def get_camera_image_path(self):
-        image_folder = 'camera_image'
-        image_files = os.listdir(image_folder)
-        if image_files:
-            latest_image_path = os.path.join(image_folder, image_files[-1])
-            return latest_image_path
-        else:
-            raise FileNotFoundError("No images found in the camera_image folder")
-
-
-    def encode_image(self, image_path, max_size=(512, 512)):
-        image = cv2.imread(image_path)
-        compressed_image = cv2.resize(image, max_size, interpolation=cv2.INTER_AREA)
-        _, buffer = cv2.imencode('.jpg', compressed_image)
-        return base64.b64encode(buffer).decode('utf-8')
-
     def LM(self, prompt, base64_image):
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},
@@ -62,6 +46,30 @@ class LMP:
         )
         return response.choices[0].message.content
 
+class image_process:
+
+    @staticmethod
+    def get_camera_image_path(image_folder):
+        image_files = os.listdir(image_folder)
+        if image_files:
+            latest_image_path = os.path.join(image_folder, image_files[-1])
+            return latest_image_path
+        else:
+            raise FileNotFoundError("No images found in the camera_image folder")
+
+    @staticmethod
+    def encode_image(image_path, max_size=(512, 512)):
+        image = cv2.imread(image_path)
+        compressed_image = cv2.resize(image, max_size, interpolation=cv2.INTER_AREA)
+        _, buffer = cv2.imencode('.jpg', compressed_image)
+        return base64.b64encode(buffer).decode('utf-8')
+
+class plan(image_process, LMP):
+    
+    def __init__(self, image_folder):
+        super().__init__()
+        self.image_folder = image_folder
+
     def get_action_plan(self, goal, image_path):
         prompt_template = self.prompt_text['prompt_template']
         base64_image = self.encode_image(image_path)
@@ -74,9 +82,8 @@ class LMP:
             yaml.dump(plan, file)
 
     def plan(self, goal):
-
         try:
-            image_path = self.get_camera_image_path()
+            image_path = self.get_camera_image_path(self.image_folder)
             print(f"Using image: {image_path}")
         except FileNotFoundError as e:
             print(e)
@@ -88,9 +95,7 @@ class LMP:
         self.save_plan_to_yaml(action_plan)
         print("Action plan saved to plan.yaml")
 
-
-
 if __name__ == "__main__":
-    lmp = LMP()
-    goal = "Put the apple on the plate"
-    lmp.plan(goal)
+    image_folder = 'camera_image'
+    planner = plan(image_folder)
+    planner.plan("Place the cup on the plate")
