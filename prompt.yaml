@@ -9,6 +9,26 @@ current_state_prompt: |
 
   As the example's format, you should output the status of all objects. The description should be as detailed as possible, including the condition of the items and the spatial relationships between them.
 
+obj_prompt: |
+  please find all items in the picture, and give me a list of items. Your answers will be used directly as search terms, so I only need a list of item names. For example:["Oven", "Microwave", "Water Boiler", "Paper Towel Roll"] 
+
+
+
+dis_prompt: |
+  Please describe all objects in the image along with their states and positions. 
+  The image is encoded in base64 format: {base64_image}
+  First you need to list what objects are included in the image. Then describe the state and spatial relationship of the object
+
+  Analyze the status of the items as in the following example:
+  door is OPEN, clothespile is CLOSED, coffeemaker is OFF, microwave is OFF and CLOSED, lightswitch is ON, kitchencabinet is CLOSED, fridge is CLOSED, faucet is OFF, tv is OFF, kitchencounter is CLOSED, coffeepot is CLOSED, green square is ON the red square, plate is ON the table, apple is ON the plate, fork is IN the cap, avocado is NEXT TO the cap, plate is IN the microwave
+
+keys_prompt: |
+  You are a human assistant. The user has now proposed a goal. Please analyze the objects that appear in the goal. Since your answer will be used directly in the query, your reply can only be a list containing all items 
+  Goal: {goal}
+  For example:
+  goal: Put the apple on the plate
+  ['apple', 'plate']
+
 
 act:
   - turnright
@@ -42,6 +62,10 @@ prompt_template: |
   The current state of the environment can be observed in the following image:
   {base64_image}
 
+  Before planning steps, review past records related to this goal:
+  {records}
+  Please check all records carefully, especially failure cases and user instructions, and get improvement suggestions from user instructions to avoid the same error this time.
+
   Here are the actions you can use to achieve the goal:
   - turnright: Turn the robotic arm to the right
   - turnleft: Turn the robotic arm to the left
@@ -62,7 +86,7 @@ prompt_template: |
   - drink <obj>: Drink from the specified object
   - pointat <obj>: Point at the specified object
   - watch <obj>: Watch the specified object
-  - putin <obj> <obj>: Put the first specified object into the second specified object
+  - putin <obj> <obj>: Put the first specified object into the second specified object                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   - putback <obj> <obj>: Put the first specified object back into the second specified object
   - done: Indicate that the task is completed
 
@@ -71,15 +95,22 @@ prompt_template: |
   Please ensure that your action plan only includes actions from the list provided above, and each step should be clearly stated in the format below:
   [action] ("object1", (optional: "object2"))
   [action] ("object1", (optional: "object2"))
-  ...
+ 
+  Example plan of Put the fork into the cup:
+  def Put_the_fork_into_the_cup(): find ("fork") walktowards ("fork") grab ("fork") find ("cup") putin ("fork","cup") done
 
-  Example plan: Put the fork into the cup
-  def Put_the_fork_into_the_cup():
-    find ("fork")
-    walktowards ("fork")
-    grab ("fork")
-    find ("cup")
-    putin ("fork","cup")
-    done
 
-  As the example's format, you should output like a python function, and each step of action is the function content.
+
+correction_prompt: |
+  You are controlling a robotic arm. Just now you proposed the motion planning of the robotic arm according to the requirements, but the user needs to make instructions on this. You need to extract keywords from the instructions provided by users.:
+  The current plan step is as follows: {planstep}. 
+  The user has provided the following instructions: {instructions}.
+
+  you need save the data as .json, and save all keys as follow: "items","color","state of items","failure case","user instructions"
+
+  Items should contain all objects mentioned in the picture and user instructions. Color needs to list the colors of all items and the saved format should be like: item(color). State of items should include the working status of all items and the spatial relationship between them. Failure case is the current plan step shown above. Summarize user instructions into one sentence and fill it in user instructions.
+  
+  Analyze the status of the items as in the following example:
+  door is OPEN, clothespile is CLOSED, coffeemaker is OFF, microwave is OFF and CLOSED, lightswitch is ON, kitchencabinet is CLOSED, fridge is CLOSED, faucet is OFF, tv is OFF, kitchencounter is CLOSED, coffeepot is CLOSED, green square is ON the red square, plate is ON the table, apple is ON the plate, fork is IN the cap, avocado is NEXT TO the cap, plate is IN the microwave
+
+  Your reply will be saved directly as a json file, so I only need you to reply to the subject part of the json.

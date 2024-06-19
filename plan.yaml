@@ -1,3 +1,0 @@
-"```python\ndef Place_the_cup_on_the_plate():\n  find(\"cup\")\n  walktowards(\"cup\"\
-  )\n  grab(\"cup\")\n  find(\"plate\")\n  walktowards(\"plate\")\n  putin(\"cup\"\
-  , \"plate\")\n  done\n```"

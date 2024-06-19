@@ -1,5 +1,5 @@
 prompt_text: "Your base prompt text with {variable_vars_imports}"
-temperature: 0
+temperature: 0.5
 model: gpt-4o
 max_tokens: 550
 query_prefix: "Act:"

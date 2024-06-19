@@ -7,6 +7,12 @@ class ObjectStateDescriptor(image_process, LMP):
         super().__init__()
         self.image_folder = image_folder
 
+    def get_objectlist(self, image_path):
+        prompt = self.prompt_text['obj_prompt']
+        base64_image = self.encode_image(image_path)
+        obj_list = self.LM(prompt, base64_image)
+        return obj_list
+
     def get_object_state(self, obj_list, image_path):
         prompt_template = self.prompt_text['current_state_prompt']
         base64_image = self.encode_image(image_path)
@@ -26,6 +32,8 @@ class ObjectStateDescriptor(image_process, LMP):
             print(e)
             return
 
+        obj_list = self.get_objectlist(image_path)
+        print(f"Generated object list: {obj_list}")
         object_state = self.get_object_state(obj_list, image_path)
         print(f"Generated object state: {object_state}")
 
