@@ -13,12 +13,6 @@ class LMP:
         with open('prompt.yaml', 'r') as file:
             self.prompt_text = yaml.safe_load(file)
 
-        self.client = AzureOpenAI(
-            azure_endpoint="https://gpt-4o-zngd2.openai.azure.com/",
-            api_key="80901122ccbc42fc993a073317f9022f",
-            api_version="2024-02-01"
-        )
-
     def LM(self, prompt, base64_image):
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},
