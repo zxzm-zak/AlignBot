@@ -1,8 +1,9 @@
 # Environment
 ```
-conda create -n VLM python=3.8
-conda activate VLM
+conda create -n AlignBot python=3.11
+conda activate AlignBot
 conda install -c conda-forge opencv pyyaml
 pip install openai
 pip install msal
+
 ```
