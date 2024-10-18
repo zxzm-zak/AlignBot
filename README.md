@@ -1,5 +1,10 @@
 # AlignBot Code Repository
 
+[![Releases](https://img.shields.io/github/release/Zhefan-Xu/CERLAB-UAV-Autonomy.svg)](https://github.com/Zhefan-Xu/CERLAB-UAV-Autonomy/releases)
+![Noetic Ubuntu 20.04](https://github.com/Zhefan-Xu/CERLAB-UAV-Autonomy/actions/workflows/Ubuntu20.04-build.yaml/badge.svg) 
+[![license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
+[![Linux platform](https://img.shields.io/badge/platform-linux--64-orange.svg)](https://releases.ubuntu.com/20.04/)
+
 [[Project page]](https://yding25.com/AlignBot/)
 [[Paper]](https://arxiv.org/pdf/2409.11905)
 [[Code]](https://github.com/zxzm-zak/AlignBot)
