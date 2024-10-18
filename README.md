@@ -45,7 +45,7 @@ conda activate AlignBot
 pip install -r requirements.txt
 ```
 
-## ⚙️ AlignBot - LLaVA Training with LLaMA Factory
+## ⚙️ LLaVA Training with LLaMA Factory
 If you'd like to train LLaVA, this guide will help you get started using the LLaMA Factory framework. 
 1. Install LLaMA Factory:
 ```
