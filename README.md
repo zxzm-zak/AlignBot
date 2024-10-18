@@ -1,5 +1,7 @@
 # AlignBot
 
+- ![AlignBot](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+
 [[Project page]](https://yding25.com/AlignBot/)
 [[Paper]](https://arxiv.org/pdf/2409.11905)
 [[Code]](https://github.com/zxzm-zak/AlignBot)
