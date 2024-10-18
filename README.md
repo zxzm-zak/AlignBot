@@ -1,3 +1,28 @@
+# AlignBot Codebase
+
+AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots
+
+[Zhaxizhuoma]()<sup>1,†</sup>,
+[Pengan Chen]()<sup>1,2,†</sup>,
+[Ziniu Wu]()<sup>1,3,†</sup>,
+[Jiawei Sun]()<sup>1</sup>,
+[Dong Wang]()<sup>1</sup>,
+[Peng Zhou]()<sup>2</sup>,
+[Nieqing Cao]()<sup>4</sup>,
+[Yan Ding]()<sup>1,*</sup>
+[Bin Zhao]()<sup>1,5</sup>,
+[Xuelong Li]()<sup>1,6</sup>
+
+<sup>1</sup>Shanghai Artificial Intelligence Laboratory,
+<sup>2</sup>The University of Hong Kong,
+<sup>3</sup>University of Bristol, 
+<sup>3</sup>Xi’an Jiaotong-Liverpool University,
+<sup>3</sup>Northwestern Polytechnical University, 
+<sup>3</sup>Institute of Artificial Intelligence, China Telecom Corp Ltd
+
+†Equal contribution, *Corresponding author: Yan Ding [yding25 (at) binghamton.edu]
+
+
 # Installation Steps
 Create a Virtual Environment and Install Dependencies
 ```
