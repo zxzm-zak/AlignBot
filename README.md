@@ -4,11 +4,6 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
 [![Linux platform](https://img.shields.io/badge/platform-linux--64-orange.svg)](https://releases.ubuntu.com/20.04/)
 
-[[Project page]](https://yding25.com/AlignBot/)
-[[Paper]](https://arxiv.org/pdf/2409.11905)
-[[Code]](https://github.com/zxzm-zak/AlignBot)
-[[Video]](https://yding25.com/AlignBot/assets/images/0922video.mp4)
-
 **AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots**
 
 [Zhaxizhuoma]()<sup>1,†</sup>,
@@ -30,6 +25,11 @@
 <sup>6</sup>Institute of Artificial Intelligence, China Telecom Corp Ltd
 
 †Equal contribution, *Corresponding author: Yan Ding [yding25 (at) binghamton.edu]
+
+[[Project page]](https://yding25.com/AlignBot/)
+[[Paper]](https://arxiv.org/pdf/2409.11905)
+[[Code]](https://github.com/zxzm-zak/AlignBot)
+[[Video]](https://yding25.com/AlignBot/assets/images/0922video.mp4)
 
 ## Abstract
 
