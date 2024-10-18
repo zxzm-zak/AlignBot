@@ -20,9 +20,9 @@
 <sup>1</sup>Shanghai Artificial Intelligence Laboratory,
 <sup>2</sup>The University of Hong Kong,
 <sup>3</sup>University of Bristol, 
-<sup>3</sup>Xi’an Jiaotong-Liverpool University,
-<sup>3</sup>Northwestern Polytechnical University, 
-<sup>3</sup>Institute of Artificial Intelligence, China Telecom Corp Ltd
+<sup>4</sup>Xi’an Jiaotong-Liverpool University,
+<sup>5</sup>Northwestern Polytechnical University, 
+<sup>6</sup>Institute of Artificial Intelligence, China Telecom Corp Ltd
 
 †Equal contribution, *Corresponding author: Yan Ding [yding25 (at) binghamton.edu]
 
