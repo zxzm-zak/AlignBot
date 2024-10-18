@@ -1,13 +1,5 @@
 # AlignBot
 
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
 [[Project page]](https://yding25.com/AlignBot/)
 [[Paper]](https://arxiv.org/pdf/2409.11905)
 [[Code]](https://github.com/zxzm-zak/AlignBot)
