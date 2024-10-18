@@ -28,7 +28,8 @@
 †Equal contribution, *Corresponding author: Yan Ding [yding25 (at) binghamton.edu]
 
 
-# Installation Steps
+## 🛠️ Installation Steps
+
 Create a Virtual Environment and Install Dependencies
 ```
 conda create -n AlignBot python=3.11
@@ -36,7 +37,7 @@ conda activate AlignBot
 pip install -r requirements.txt
 ```
 
-# AlignBot - LLaVA Training with LLaMA Factory
+## ⚙️ AlignBot - LLaVA Training with LLaMA Factory
 If you'd like to train LLaVA, this guide will help you get started using the LLaMA Factory framework. 
 1. Install LLaMA Factory:
 ```
@@ -67,7 +68,7 @@ The original model path and the fine-tuned model path need to be filled in llava
 
 4. For more details on training LLaVA using LLaMA Factory, please visit the official https://github.com/hiyouga/LLaMA-Factory/
 
-# Getting Started
+## 🦾 Getting Started
 Use the following commands to run model
 ```
 main.py --mode llava --img use_url
@@ -79,3 +80,7 @@ main.py --mode llava --img use_url
 - **`--img`**: Specifies how to handle images.
     - `use_url`: Upload or reference images via URL.
     - `use_base64`: Base64-encoded images.
+
+
+## 🏷️ License
+This repository is released under the MIT license. See [LICENSE](LICENSE) for additional details.
