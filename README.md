@@ -1,8 +1,9 @@
-# AlignBot Codebase
+# AlignBot
 
 [[Project page]](https://yding25.com/AlignBot/)
 [[Paper]](https://arxiv.org/pdf/2409.11905)
 [[Code]](https://github.com/zxzm-zak/AlignBot)
+[[Video]](https://yding25.com/AlignBot/assets/images/0922video.mp4)
 
 **AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots**
 
