@@ -1,6 +1,6 @@
 # AlignBot Codebase
 
-AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots
+**AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots**
 
 [Zhaxizhuoma]()<sup>1,†</sup>,
 [Pengan Chen]()<sup>1,2,†</sup>,
