@@ -1,6 +1,12 @@
 # AlignBot
 
-- ![AlignBot](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 [[Project page]](https://yding25.com/AlignBot/)
 [[Paper]](https://arxiv.org/pdf/2409.11905)
