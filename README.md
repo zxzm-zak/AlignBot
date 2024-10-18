@@ -1,5 +1,9 @@
 # AlignBot Codebase
 
+[[Project page]]([https://umi-gripper.github.io/](https://yding25.com/AlignBot/))
+[[Paper]](https://arxiv.org/pdf/2409.11905)
+[[Code]](https://github.com/zxzm-zak/AlignBot)
+
 **AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots**
 
 [Zhaxizhuoma]()<sup>1,†</sup>,
