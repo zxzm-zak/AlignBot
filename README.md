@@ -30,6 +30,7 @@
 [[Paper]](https://arxiv.org/pdf/2409.11905)
 [[Code]](https://github.com/zxzm-zak/AlignBot)
 [[Video]](https://yding25.com/AlignBot/assets/images/0922video.mp4)
+[[Dataset for llava]](https://huggingface.co/datasets/cpa2001/alignbot-dataset)
 
 ## Abstract
 
