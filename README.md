@@ -6,16 +6,16 @@
 
 **AlignBot: Aligning VLM-powered Customized Task Planning with User Reminders Through Fine-Tuning for Household Robots**
 
-[Zhaxizhuoma]()<sup>1,†</sup>,
-[Pengan Chen]()<sup>1,2,†</sup>,
-[Ziniu Wu]()<sup>1,3,†</sup>,
-[Jiawei Sun]()<sup>1</sup>,
-[Dong Wang]()<sup>1</sup>,
-[Peng Zhou]()<sup>2</sup>,
-[Nieqing Cao]()<sup>4</sup>,
-[Yan Ding]()<sup>1,*</sup>
-[Bin Zhao]()<sup>1,5</sup>,
-[Xuelong Li]()<sup>1,6</sup>
+[Zhaxizhuoma](https://zxzm-zak.github.io/)<sup>1,†</sup>,
+[Pengan Chen](https://github.com/cpa2001)<sup>1,2,†</sup>,
+[Ziniu Wu](https://ziniuw.com/)<sup>1,3,†</sup>,
+[Jiawei Sun](https://jiawei-sn.github.io/)<sup>1</sup>,
+[Dong Wang](https://scholar.google.com/citations?user=dasL9V4AAAAJ&hl=zh-CN)<sup>1</sup>,
+[Peng Zhou](https://jeffery-zhou.github.io/)<sup>2</sup>,
+[Nieqing Cao](https://scholar.xjtlu.edu.cn/en/persons/NieqingCao)<sup>4</sup>,
+[Yan Ding](https://yding25.com/)<sup>1,*</sup>
+[Bin Zhao](https://iopen.nwpu.edu.cn/info/1347/2105.htm)<sup>1,5</sup>,
+[Xuelong Li](http://xuelongli.cn/en.php)<sup>1,6</sup>
 
 <sup>1</sup>Shanghai Artificial Intelligence Laboratory,
 <sup>2</sup>The University of Hong Kong,
